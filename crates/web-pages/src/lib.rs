@@ -1,14 +1,8 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+mod layout;
+pub mod root;
+use dioxus::prelude::*;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn render_page(page: Element) -> String {
+    let html = dioxus_ssr::render_element(page);
+    format!("<!DOCTYPE html><html lang='en'>{}</html>", html)
 }
