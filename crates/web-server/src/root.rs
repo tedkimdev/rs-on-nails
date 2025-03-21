@@ -1,4 +1,4 @@
-use axum::{response::Html, Extension, Json};
+use axum::{response::Html, Extension};
 use db::User;
 use web_pages::root;
 

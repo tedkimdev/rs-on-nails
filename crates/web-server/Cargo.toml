@@ -4,10 +4,15 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-axum = { version = "0.7", default-features = false, features = ["json", "http1", "tokio"] }
+web-pages = { path = "../web-pages" }
+web-assets = { path = "../web-assets" }
 db = { version = "0.1.0", path = "../db" }
-serde = { version = "1", features = ["derive"] }
+axum = { version = "0.7", default-features = false, features = ["http1", "json", "tokio"] }
+axum-extra = { version = "0.9", features = ["form", "typed-routing"] }
 tokio = { version = "1", default-features = false, features = ["macros", "rt-multi-thread"] }
 tokio-util = { version = "0.7", default-features = false }
 tower-livereload = "0.9"
-web-pages = { version = "0.1.0", path = "../web-pages" }
+serde = { version = "1", features = ["derive"] }
+validator = { version = "0.19", features = ["derive"] }
+
+tower-http = { version = "0.6.1", features = ["fs", "trace"] }
