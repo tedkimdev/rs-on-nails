@@ -7,6 +7,7 @@ fn main() {
 
     // Example of multiple asset directories
     let asset_dirs = vec![
+        PathBuf::from("./js"),
         PathBuf::from("./images"),
         PathBuf::from("./dist"),
     ];
